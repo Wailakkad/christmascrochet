@@ -7,6 +7,7 @@ import { getCategoryBySlug } from '../data/categories';
 import { getArticlesByCategorySlug } from '../data/articles';
 import { CategorySlug } from '../types';
 import { Sparkles, HelpCircle, CheckCircle2, ArrowRight } from 'lucide-react';
+import { AdBanner } from '../components/AdBanner';
 
 export const CategoryPage: React.FC = () => {
   const { categorySlug } = useParams<{ categorySlug: string }>();
@@ -94,6 +95,11 @@ export const CategoryPage: React.FC = () => {
             <BlogCard key={article.id} article={article} />
           ))}
         </div>
+      </div>
+
+      {/* Ad: Category page */}
+      <div className="my-8">
+        <AdBanner />
       </div>
 
       {/* Category Specific Tips */}

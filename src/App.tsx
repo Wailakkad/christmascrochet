@@ -7,6 +7,7 @@ import { BlogIndexPage } from './pages/BlogIndexPage';
 import { CategoryPage } from './pages/CategoryPage';
 import { ArticlePage } from './pages/ArticlePage';
 import { AboutPage } from './pages/AboutPage';
+import { AdBanner } from './components/AdBanner';
 
 // Scroll to top helper on route navigation unless an anchor hash is present
 function ScrollToTop() {
@@ -38,6 +39,7 @@ export default function App() {
       <div className="flex flex-col min-h-screen bg-white text-[#171717] font-sans antialiased selection:bg-[#6F8065]/20 selection:text-[#173A2B]">
         <Header />
         <main className="flex-1">
+          <AdBanner />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/blog" element={<BlogIndexPage />} />

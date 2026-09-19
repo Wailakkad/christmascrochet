@@ -5,6 +5,7 @@ import { Newsletter } from '../components/Newsletter';
 import { allArticles } from '../data/articles';
 import { ArticleCategory } from '../types';
 import { BookOpen, Sparkles } from 'lucide-react';
+import { AdBanner } from '../components/AdBanner';
 
 export const BlogIndexPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -81,6 +82,11 @@ export const BlogIndexPage: React.FC = () => {
 
       {/* Newsletter */}
       <Newsletter />
+
+      {/* Ad: Bottom of blog page */}
+      <div className="mt-10">
+        <AdBanner />
+      </div>
     </div>
   );
 };

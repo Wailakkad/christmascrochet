@@ -8,6 +8,7 @@ import { ShareButtons } from '../components/ShareButtons';
 import { BlogCard } from '../components/BlogCard';
 import { Newsletter } from '../components/Newsletter';
 import { Clock, Calendar, ArrowRight, Sparkles, Pin } from 'lucide-react';
+import { AdBanner } from '../components/AdBanner';
 
 export const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -166,6 +167,11 @@ export const ArticlePage: React.FC = () => {
           </div>
         </div>
 
+        {/* Ad: Under hero image */}
+        <div className="my-6">
+          <AdBanner />
+        </div>
+
         {/* Share Buttons Strip */}
         <ShareButtons
           title={article.title}
@@ -258,6 +264,11 @@ export const ArticlePage: React.FC = () => {
               description={article.excerpt}
             />
           </div>
+        </div>
+
+        {/* Ad: Bottom of article */}
+        <div className="my-8">
+          <AdBanner />
         </div>
 
         {/* Related Articles Section */}

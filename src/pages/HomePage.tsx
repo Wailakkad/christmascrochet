@@ -7,6 +7,7 @@ import { Newsletter } from '../components/Newsletter';
 import { categories } from '../data/categories';
 import { allArticles } from '../data/articles';
 import { ArrowRight, Sparkles, Heart, Gift, BookOpen } from 'lucide-react';
+import { AdBanner } from '../components/AdBanner';
 
 export const HomePage: React.FC = () => {
   useEffect(() => {
@@ -80,6 +81,11 @@ export const HomePage: React.FC = () => {
             ))}
           </div>
         </section>
+
+        {/* Ad: Home mid-page */}
+        <div className="my-12">
+          <AdBanner />
+        </div>
 
         {/* Why Handmade Christmas Matters - Editorial Craft Manifesto */}
         <section className="my-16 p-8 md:p-12 rounded-3xl bg-[#F3F7F1]/80 border border-[#6F8065]/20">
