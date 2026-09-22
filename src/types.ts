@@ -1,6 +1,6 @@
-export type ArticleCategory = 'Christmas Crochet Projects' | 'Christmas Crochet Blanket';
+export type ArticleCategory = 'Christmas Crochet Projects' | 'Christmas Crochet Blanket' | 'Halloween Crochet Projects' | 'Halloween Crochet Decor';
 
-export type CategorySlug = 'christmas-crochet-projects' | 'christmas-crochet-blanket';
+export type CategorySlug = 'christmas-crochet-projects' | 'christmas-crochet-blanket' | 'halloween-crochet-projects' | 'halloween-crochet-decor';
 
 export type ProjectDifficulty = 'Beginner' | 'Beginner-Easy' | 'Easy' | 'Easy-Intermediate' | 'Intermediate';
 

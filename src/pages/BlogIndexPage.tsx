@@ -71,6 +71,28 @@ export const BlogIndexPage: React.FC = () => {
         >
           Christmas Crochet Blankets (2)
         </button>
+
+        <button
+          onClick={() => setSelectedCategory('halloween-crochet-projects')}
+          className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+            selectedCategory === 'halloween-crochet-projects'
+              ? 'bg-[#173A2B] text-white shadow-xs'
+              : 'bg-[#F3F7F1] text-[#171717] hover:bg-[#6F8065]/20'
+          }`}
+        >
+          Halloween Crochet Projects (1)
+        </button>
+
+        <button
+          onClick={() => setSelectedCategory('halloween-crochet-decor')}
+          className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+            selectedCategory === 'halloween-crochet-decor'
+              ? 'bg-[#173A2B] text-white shadow-xs'
+              : 'bg-[#F3F7F1] text-[#171717] hover:bg-[#6F8065]/20'
+          }`}
+        >
+          Halloween Crochet Decor (1)
+        </button>
       </div>
 
       {/* Article Grid */}

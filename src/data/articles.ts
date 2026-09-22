@@ -4,13 +4,17 @@ import { article2 } from './article2';
 import { article3 } from './article3';
 import { article4 } from './article4';
 import { article5 } from './article5';
+import { article6 } from './article6';
+import { article7 } from './article7';
 
 export const allArticles: Article[] = [
   article1,
   article2,
   article3,
   article4,
-  article5
+  article5,
+  article6,
+  article7
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {

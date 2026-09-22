@@ -47,6 +47,8 @@ export default function App() {
             {/* Category Pages */}
             <Route path="/blog/christmas-crochet-projects" element={<CategoryPage />} />
             <Route path="/blog/christmas-crochet-blanket" element={<CategoryPage />} />
+            <Route path="/blog/halloween-crochet-projects" element={<CategoryPage />} />
+            <Route path="/blog/halloween-crochet-decor" element={<CategoryPage />} />
             <Route path="/blog/category/:categorySlug" element={<CategoryPage />} />
 
             {/* Individual Article Roundup Pages */}
