@@ -7,6 +7,7 @@ import { BlogIndexPage } from './pages/BlogIndexPage';
 import { CategoryPage } from './pages/CategoryPage';
 import { ArticlePage } from './pages/ArticlePage';
 import { AboutPage } from './pages/AboutPage';
+import { FreePatternsPage } from './pages/FreePatternsPage';
 import { AdBanner } from './components/AdBanner';
 
 // Scroll to top helper on route navigation unless an anchor hash is present
@@ -56,6 +57,7 @@ export default function App() {
 
             {/* About Page */}
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/free-patterns" element={<FreePatternsPage />} />
 
             {/* Fallback */}
             <Route path="*" element={<Navigate to="/" replace />} />
