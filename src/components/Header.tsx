@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Search, Sparkles } from 'lucide-react';
+import { Menu, X, Search, Sparkles, Gift } from 'lucide-react';
 import { SearchModal } from './SearchModal';
 
 export const Header: React.FC = () => {
@@ -84,6 +84,19 @@ export const Header: React.FC = () => {
 
             {/* Header Actions */}
             <div className="flex items-center gap-2">
+              {/* Highlighted Free Guide CTA */}
+              <Link
+                to="/free-guide"
+                className={`hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all shadow-sm hover:shadow-md ${
+                  isActive('/free-guide')
+                    ? 'bg-[#9F2C2C] text-white'
+                    : 'bg-[#B83A3A] text-white hover:bg-[#9F2C2C]'
+                }`}
+              >
+                <Gift className="w-3.5 h-3.5" />
+                <span>Free Guide</span>
+              </Link>
+
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className="p-2 rounded-xl text-[#666666] hover:text-[#173A2B] hover:bg-[#F3F7F1] transition-colors flex items-center gap-1.5 text-xs font-medium"
@@ -125,7 +138,14 @@ export const Header: React.FC = () => {
                 </Link>
               ))}
 
-              <div className="pt-3 border-t border-[#6F8065]/10 mt-2">
+              <div className="pt-3 border-t border-[#6F8065]/10 mt-2 space-y-2">
+                <Link
+                  to="/free-guide"
+                  className="flex w-full items-center justify-center gap-2 py-2.5 rounded-xl bg-[#B83A3A] text-white text-xs font-bold"
+                >
+                  <Gift className="w-4 h-4" />
+                  <span>Get the Free PDF Guide</span>
+                </Link>
                 <button
                   onClick={() => {
                     setIsMenuOpen(false);
