@@ -89,7 +89,7 @@ export const ArticlePage: React.FC = () => {
         <Breadcrumbs
           items={[
             { label: 'Blog', path: '/blog' },
-            { label: article.category, path: `/blog/${article.categorySlug}` },
+            { label: article.category, path: '/blog' },
             { label: article.title }
           ]}
         />
@@ -97,7 +97,7 @@ export const ArticlePage: React.FC = () => {
         {/* Category Pill */}
         <div className="mb-3">
           <Link
-            to={`/blog/${article.categorySlug}`}
+            to="/blog"
             className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#F3F7F1] text-[#173A2B] border border-[#6F8065]/20 hover:bg-[#6F8065]/20 transition-colors"
           >
             <Sparkles className="w-3 h-3 text-[#B83A3A]" />

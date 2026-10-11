@@ -38,7 +38,7 @@ export const HomePage: React.FC = () => {
               </h2>
             </div>
             <p className="text-sm text-[#666666] max-w-md">
-              From festive ornaments to cozy heirloom afghans, discover the perfect handmade holiday make.
+              Browse our holiday collections and discover the perfect handmade make for every season.
             </p>
           </div>
 

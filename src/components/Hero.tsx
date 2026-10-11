@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
               <Link
-                to="/blog/christmas-crochet-projects"
+                to="/blog"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#B83A3A] text-white text-sm font-semibold hover:bg-[#9F2C2C] shadow-sm hover:shadow-md transition-all group"
               >
                 <span>Explore Christmas Crochet Ideas</span>
@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
               </Link>
 
               <Link
-                to="/blog/christmas-crochet-blanket"
+                to="/blog/20-christmas-crochet-blanket-patterns-for-a-cozy-holiday-home"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-[#173A2B] border border-[#6F8065]/30 text-sm font-semibold hover:bg-[#F3F7F1] hover:border-[#173A2B] transition-all"
               >
                 <BookOpen className="w-4 h-4 text-[#6F8065]" />

@@ -1,7 +1,5 @@
 // Curated and Cloudinary high-resolution project images
 import heroHome from './images/christmas_crochet_hero_1789759469203.jpg';
-import catProjects from './images/cat_projects_1789759486379.jpg';
-import catBlankets from './images/cat_blankets_1789759497658.jpg';
 import article1Hero from './images/article1_hero_1789759507918.jpg';
 import article2Hero from './images/article2_hero_1789759637527.jpg';
 import article3Hero from './images/article3_hero_1789759520113.jpg';
@@ -165,8 +163,6 @@ export const scarfImages = {
 
 export const siteImages = {
   heroHome,
-  catProjects: projectImages.wreath,
-  catBlankets: blanketImages.heirloomGranny,
   article1Hero: projectImages.wreath,
   article2Hero: quickProjectImages.rusticGiftTags,
   article3Hero: blanketImages.chunkyCableChalet,

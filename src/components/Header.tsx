@@ -26,8 +26,7 @@ export const Header: React.FC = () => {
     { label: 'Home', path: '/' },
     { label: 'Blog', path: '/blog' },
     { label: 'Free Patterns', path: '/free-patterns' },
-    { label: 'Christmas Crochet Projects', path: '/blog/christmas-crochet-projects' },
-    { label: 'Christmas Crochet Blankets', path: '/blog/christmas-crochet-blanket' },
+    { label: 'Free Downloads', path: '/free-resources' },
     { label: 'About', path: '/about' },
   ];
 

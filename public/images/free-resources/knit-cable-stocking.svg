@@ -1,0 +1,40 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Knit Cable Stocking Pattern placeholder image">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F8F2"/>
+      <stop offset="100%" stop-color="#E3EADD"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <circle cx="110" cy="110" r="150" fill="#6F8065" fill-opacity="0.08"/>
+  <circle cx="700" cy="500" r="170" fill="#B83A3A" fill-opacity="0.07"/>
+
+  <rect x="26" y="26" width="748" height="548" rx="30" fill="url(#card)" stroke="#6F8065" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="12 9"/>
+
+  <g transform="translate(400,196)">
+    <circle r="64" fill="#FFFFFF" stroke="#173A2B" stroke-width="5"/>
+    <path d="M-47 -31 C -12 8, 20 38, 47 45" stroke="#B83A3A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <path d="M-53 5 C -17 33, 23 44, 55 29" stroke="#6F8065" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <path d="M-41 -49 C -7 -19, 25 5, 53 5" stroke="#6F8065" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <path d="M-9 -61 C -35 -31, -45 5, -31 45" stroke="#B83A3A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <path d="M-61 -14 C -34 -44, 4 -58, 44 -50" stroke="#173A2B" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-opacity="0.75"/>
+    <path d="M62 18 c 26 17, 33 41, 15 55 c -12 9, -27 3, -28 -10" stroke="#173A2B" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <rect x="330" y="82" width="140" height="34" rx="17" fill="#B83A3A"/>
+  <text x="400" y="104" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" letter-spacing="1.6">FREE PDF</text>
+
+  <text x="400" y="356" text-anchor="middle" font-family="Georgia,serif" font-size="38" font-weight="bold" fill="#171717">Knit Cable</text>
+  <text x="400" y="404" text-anchor="middle" font-family="Georgia,serif" font-size="38" font-weight="bold" fill="#173A2B">Stocking Pattern</text>
+
+  <line x1="330" y1="440" x2="470" y2="440" stroke="#B83A3A" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 8"/>
+
+  <text x="400" y="484" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#666666">Placeholder image</text>
+  <text x="400" y="512" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#8A8A8A">Replace with the final product photo</text>
+</svg>

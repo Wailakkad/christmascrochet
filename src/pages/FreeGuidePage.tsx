@@ -90,7 +90,7 @@ export const FreeGuidePage: React.FC = () => {
                 alt="Person placing a handmade crochet ornament on a Christmas tree"
                 loading="eager"
                 referrerPolicy="no-referrer"
-                className="aspect-[4/3] w-full object-cover sm:aspect-[5/4]"
+                className="block h-auto w-full"
               />
               <div className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/92 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#B83A3A] shadow-sm backdrop-blur-sm">
                 <Sparkles className="h-3 w-3" />
@@ -167,6 +167,7 @@ export const FreeGuidePage: React.FC = () => {
         badge="What's inside"
         imageRight
         tone="cream"
+        naturalSize
         title={
           <>
             Everything you need, tucked into{' '}
@@ -211,6 +212,7 @@ export const FreeGuidePage: React.FC = () => {
         badge="Beginner friendly"
         imageRight={false}
         tone="plain"
+        naturalSize
         title={
           <>
             Made for first-timers, finished{' '}
@@ -247,6 +249,7 @@ export const FreeGuidePage: React.FC = () => {
         badge="How it works"
         imageRight
         tone="mint"
+        naturalSize
         title={
           <>
             Three tiny steps between you and{' '}
@@ -317,7 +320,7 @@ export const FreeGuidePage: React.FC = () => {
           {/* Cross-links to keep people browsing */}
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              to="/blog/christmas-crochet-projects"
+              to="/blog/30-christmas-crochet-projects-to-make-for-the-holidays"
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#6F8065]/30 bg-white px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#173A2B] transition-colors hover:border-[#173A2B] hover:bg-[#F3F7F1] sm:w-auto"
             >
               Browse 30+ Christmas Projects

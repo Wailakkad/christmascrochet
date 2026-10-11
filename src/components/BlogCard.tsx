@@ -34,7 +34,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ article, featured = false })
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <Link
-                  to={`/blog/${article.categorySlug}`}
+                  to="/blog"
                   className="text-xs font-semibold uppercase tracking-wider text-[#B83A3A] hover:underline"
                 >
                   {article.category}

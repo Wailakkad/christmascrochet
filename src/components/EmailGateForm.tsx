@@ -9,9 +9,27 @@ import {
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
-const STORAGE_KEY = 'freeGuideUnlocked';
+const DEFAULT_STORAGE_KEY = 'freeGuideUnlocked';
 
 interface EmailGateFormProps {
+  /** Public path of the PDF to unlock. */
+  pdfUrl?: string;
+  /** File name offered on download. */
+  pdfFilename?: string;
+  /** Human friendly size shown under the download button. */
+  fileSizeLabel?: string;
+  /** Label of the unlocked download button. */
+  downloadLabel?: string;
+  /** Label of the submit button. */
+  submitLabel?: string;
+  /** Heading above the email field. */
+  heading?: string;
+  /** Value sent to the apps-script `source` field. */
+  source?: string;
+  /** Value sent to the apps-script `campaign` field. */
+  campaign?: string;
+  /** Session storage key used to remember an unlocked PDF. */
+  storageKey?: string;
   /** Shows the compact trust row under the button (great for the hero). */
   showTrustRow?: boolean;
   /** Extra classes for the outer wrapper. */
@@ -19,22 +37,32 @@ interface EmailGateFormProps {
 }
 
 export const EmailGateForm: React.FC<EmailGateFormProps> = ({
+  pdfUrl = FREE_GUIDE_PDF_URL,
+  pdfFilename = FREE_GUIDE_PDF_FILENAME,
+  fileSizeLabel = '15 MB',
+  downloadLabel = 'Download the Free PDF Guide',
+  submitLabel = 'Send My Free Guide',
+  heading = 'Get the free PDF sent to you',
+  source = '/free-guide',
+  campaign = 'free-guide-landing',
+  storageKey = DEFAULT_STORAGE_KEY,
   showTrustRow = true,
   className = '',
 }) => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<Status>('idle');
   const [message, setMessage] = useState('');
+  const fieldId = `email-gate-${storageKey.replace(/[^a-zA-Z0-9_-]+/g, '-')}`;
 
   useEffect(() => {
     try {
-      if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+      if (sessionStorage.getItem(storageKey) === '1') {
         setStatus('success');
       }
     } catch {
       // sessionStorage unavailable — ignore
     }
-  }, []);
+  }, [storageKey]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,9 +87,9 @@ export const EmailGateForm: React.FC<EmailGateFormProps> = ({
 
     const body = new URLSearchParams();
     body.append('email', cleanEmail);
-    body.append('source', '/free-guide');
+    body.append('source', source);
     body.append('referrer', document.referrer || '');
-    body.append('campaign', 'free-guide-landing');
+    body.append('campaign', campaign);
 
     try {
       await fetch(APPS_SCRIPT_URL, {
@@ -76,7 +104,7 @@ export const EmailGateForm: React.FC<EmailGateFormProps> = ({
       await new Promise((resolve) => setTimeout(resolve, 700));
 
       try {
-        sessionStorage.setItem(STORAGE_KEY, '1');
+        sessionStorage.setItem(storageKey, '1');
       } catch {
         // ignore
       }
@@ -97,7 +125,7 @@ export const EmailGateForm: React.FC<EmailGateFormProps> = ({
             </span>
             <div>
               <p className="font-serif text-lg font-bold text-[#173A2B] leading-snug">
-                You&apos;re in! Your free guide is ready.
+                You&apos;re in! Your free PDF is ready.
               </p>
               <p className="text-sm text-[#666666] mt-0.5">
                 We also sent a copy to your inbox so you never lose it.
@@ -106,18 +134,18 @@ export const EmailGateForm: React.FC<EmailGateFormProps> = ({
           </div>
 
           <a
-            href={FREE_GUIDE_PDF_URL}
-            download={FREE_GUIDE_PDF_FILENAME}
+            href={pdfUrl}
+            download={pdfFilename}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#B83A3A] px-6 py-4 text-sm font-bold text-white shadow-[0_12px_28px_-12px_rgba(184,58,58,0.85)] transition-all hover:bg-[#9F2C2C] hover:shadow-[0_16px_32px_-12px_rgba(184,58,58,0.9)]"
           >
             <Download className="h-4.5 w-4.5 transition-transform group-hover:translate-y-0.5" />
-            <span>Download the Free PDF Guide</span>
+            <span>{downloadLabel}</span>
           </a>
 
           <p className="mt-3 text-center text-xs text-[#666666]">
-            15 MB &middot; Instant access &middot; No payment details, ever
+            {fileSizeLabel} &middot; Instant access &middot; No payment details, ever
           </p>
         </div>
       </div>
@@ -132,12 +160,12 @@ export const EmailGateForm: React.FC<EmailGateFormProps> = ({
             <Gift className="h-4 w-4" />
           </span>
           <p className="font-serif text-base font-bold text-[#173A2B]">
-            Get the free PDF sent to you
+            {heading}
           </p>
         </div>
 
         <label
-          htmlFor="free-guide-email"
+          htmlFor={fieldId}
           className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[#666666]"
         >
           Your best email
@@ -147,7 +175,7 @@ export const EmailGateForm: React.FC<EmailGateFormProps> = ({
           <div className="relative flex-1">
             <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6F8065]" />
             <input
-              id="free-guide-email"
+              id={fieldId}
               type="email"
               inputMode="email"
               autoComplete="email"
@@ -173,7 +201,7 @@ export const EmailGateForm: React.FC<EmailGateFormProps> = ({
               </>
             ) : (
               <>
-                <span>Send My Free Guide</span>
+                <span>{submitLabel}</span>
                 <Download className="h-4 w-4" />
               </>
             )}

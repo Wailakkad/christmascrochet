@@ -58,13 +58,8 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/blog/christmas-crochet-projects" className="text-white/80 hover:text-white transition-colors">
-                    Christmas Crochet Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/blog/christmas-crochet-blanket" className="text-white/80 hover:text-white transition-colors">
-                    Christmas Crochet Blankets
+                  <Link to="/free-resources" className="text-white/80 hover:text-white transition-colors">
+                    Free PDF Downloads
                   </Link>
                 </li>
               </ul>

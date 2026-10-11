@@ -9,6 +9,8 @@ import { ArticlePage } from './pages/ArticlePage';
 import { AboutPage } from './pages/AboutPage';
 import { FreePatternsPage } from './pages/FreePatternsPage';
 import { FreeGuidePage } from './pages/FreeGuidePage';
+import { FreeResourcesHubPage } from './pages/FreeResourcesHubPage';
+import { FreeResourcePage } from './pages/FreeResourcePage';
 import { AdBanner } from './components/AdBanner';
 
 // Top-of-page ad, suppressed on conversion-focused landing pages so the first
@@ -55,8 +57,8 @@ export default function App() {
             <Route path="/blog" element={<BlogIndexPage />} />
             
             {/* Category Pages */}
-            <Route path="/blog/christmas-crochet-projects" element={<CategoryPage />} />
-            <Route path="/blog/christmas-crochet-blanket" element={<CategoryPage />} />
+            <Route path="/blog/christmas-crochet-projects" element={<Navigate to="/blog" replace />} />
+            <Route path="/blog/christmas-crochet-blanket" element={<Navigate to="/blog" replace />} />
             <Route path="/blog/halloween-crochet-projects" element={<CategoryPage />} />
             <Route path="/blog/halloween-crochet-decor" element={<CategoryPage />} />
             <Route path="/blog/category/:categorySlug" element={<CategoryPage />} />
@@ -68,6 +70,8 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/free-patterns" element={<FreePatternsPage />} />
             <Route path="/free-guide" element={<FreeGuidePage />} />
+            <Route path="/free-resources" element={<FreeResourcesHubPage />} />
+            <Route path="/free-resources/:slug" element={<FreeResourcePage />} />
 
             {/* Fallback */}
             <Route path="*" element={<Navigate to="/" replace />} />

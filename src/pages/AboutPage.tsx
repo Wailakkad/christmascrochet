@@ -95,14 +95,14 @@ export const AboutPage: React.FC = () => {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              to="/blog/christmas-crochet-projects"
+              to="/blog"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#173A2B] text-white text-xs font-semibold hover:bg-[#122E22] transition-colors"
             >
               <span>Explore Christmas Crochet Projects</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              to="/blog/christmas-crochet-blanket"
+              to="/blog/20-christmas-crochet-blanket-patterns-for-a-cozy-holiday-home"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#173A2B] border border-[#6F8065]/30 text-xs font-semibold hover:bg-[#F3F7F1] transition-colors"
             >
               <span>Browse Cozy Blankets</span>

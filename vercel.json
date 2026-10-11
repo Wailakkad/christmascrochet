@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/blog/christmas-crochet-projects", "destination": "/blog", "permanent": true },
+    { "source": "/blog/christmas-crochet-blanket", "destination": "/blog", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/((?!assets/).*)", "destination": "/index.html" }
   ]

@@ -16,6 +16,8 @@ interface FeatureRowProps {
   imageRight?: boolean;
   /** Soft tinted background band behind the whole row. */
   tone?: 'plain' | 'cream' | 'mint';
+  /** Render the image at its natural size instead of a fixed 4/3 crop. */
+  naturalSize?: boolean;
 }
 
 const toneClasses: Record<string, string> = {
@@ -34,6 +36,7 @@ export const FeatureRow: React.FC<FeatureRowProps> = ({
   children,
   imageRight = false,
   tone = 'plain',
+  naturalSize = false,
 }) => {
   return (
     <section className={`${toneClasses[tone]} px-4 sm:px-6 lg:px-8 py-14 md:py-20`}>
@@ -57,7 +60,11 @@ export const FeatureRow: React.FC<FeatureRowProps> = ({
               alt={imageAlt}
               loading="lazy"
               referrerPolicy="no-referrer"
-              className="aspect-[4/3] w-full object-cover"
+              className={
+                naturalSize
+                  ? 'block h-auto w-full'
+                  : 'aspect-[4/3] w-full object-cover'
+              }
             />
             {/* cute floating sticker */}
             <span className="absolute bottom-4 left-4 rounded-full border border-[#6F8065]/25 bg-white/95 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#173A2B] shadow-md backdrop-blur-sm">
